@@ -1,0 +1,63 @@
+body {
+  margin: 40px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+header, aside {
+  text-align: center;
+}
+
+header img, header h1 {
+  display: inline-block;
+  vertical-align: top;
+}
+ 
+header h1 {
+  margin-top: 20px;
+}
+
+.logo {
+  width: 100px;
+}
+
+aside ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+aside li {
+  padding: 7px 0;
+}
+
+main p {
+  margin: 30px 0;
+  column-count: auto;
+  column-gap: 2em;
+}
+
+.frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 753px) {
+  header, aside {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  main p {
+    column-count: 2;
+  }
+}
+
+@media only screen and (min-width: 1172px) {
+  main p {
+    column-count: 3;
+  }
+}
