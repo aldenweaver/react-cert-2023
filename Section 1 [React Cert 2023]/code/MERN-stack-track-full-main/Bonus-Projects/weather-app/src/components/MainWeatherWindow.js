@@ -4,7 +4,7 @@ import CityInput from "./CityInput";
 import WeatherBox from "./WeatherBox";
 import useAxios from '../hooks/useAxios';
 
-import "./MainWeatherWindow.css";
+// import "./MainWeatherWindow.css";
 
 function MainWeatherWindow(props) {
     const [cityInput, setCityInput] = useState("");

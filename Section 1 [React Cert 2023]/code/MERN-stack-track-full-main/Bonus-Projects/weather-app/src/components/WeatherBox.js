@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import "./WeatherBox.css";
+// import "./WeatherBox.css";
 
 function WeatherBox(props) {
 
@@ -14,7 +14,7 @@ function WeatherBox(props) {
                 alt="sun"
             />
             {/* Convert Kelvin to °C */}
-            <span>{Math.round(props.temp - 273.15)} °C</span>
+            <span className="temp">{Math.round(props.temp - 273.15)} °C</span>
         </div>
      );
 }
