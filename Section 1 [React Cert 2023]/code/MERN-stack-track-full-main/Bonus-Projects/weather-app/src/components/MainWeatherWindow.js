@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import CityInput from "./CityInput";
+import Today from './Today';
 import WeatherBox from "./WeatherBox";
 import useAxios from '../hooks/useAxios';
 
@@ -23,6 +24,7 @@ function MainWeatherWindow(props) {
     });
 
     const [thisWeek, setThisWeek] = useState([]);
+
     console.log("Right after 'const [thisWeek, setThisWeek] = useState([]);' in MainWeatherWindow: " + JSON.stringify(thisWeek));
 
     // Helper function to format day of the week
@@ -114,45 +116,29 @@ function MainWeatherWindow(props) {
     // Source and style of an img tag can both depend on props
     return ( 
         <div className="main">
-            <div className="inner-main">
-                {/* Import a dynamic image based on the data of what weather comes back when the code calls the Weather API */}
-                <img 
-                    // Require is located here because the path needs to be dynamic
-                    src={require(`../images/${today.img}.svg`)}
-                    alt="sun"
-                    style={today.styles}
-                />
-
-                {/*Everything in this tag is only visible after the search, so can reference today data because it will exist */}
-                <div 
-                    className="today"
-                    style={today.styles}
-                >
-                    <span>Today</span>
-                    {today.title}
-                    <p>Temperature: {Math.round(today.temp - 273.15)} °C</p>
-                    <p>{today.desc.toLowerCase()}</p>
-                </div>
-            </div>
 
             <CityInput input={cityInput} setInput={setCityInput} submit={handleCitySubmit}/>
 
-            {/*{data ? console.log(data) : "Waiting for data..."}
-            {<WeatherBox day={thisWeek[0].weekDay}/>*/}
+            <div className="inner-main">
+                <Today today={today} setToday={setToday}/>
 
-            {console.log("MainWeatherWindow component data state before WeatherBox component creation via map: " + JSON.stringify(thisWeek))}
+                {/*{data ? console.log(data) : "Waiting for data..."}
+                {<WeatherBox day={thisWeek[0].weekDay}/>*/}
+            </div>
+                {console.log("MainWeatherWindow component data state before WeatherBox component creation via map: " + JSON.stringify(thisWeek))}
+            <div className="inner-main">
+                {/*  New WeatherBox data mapping */}
+                { data ?
+                    thisWeek.map((dayData, index) => 
+                        <WeatherBox key={index} {...dayData} />)
+                    : "Weather Box Loading..."
+                }
 
-            {/*  New WeatherBox data mapping */}
-            { data ?
-                thisWeek.map((dayData, index) => 
-                    <WeatherBox key={index} {...dayData} />)
-                : "Weather Box Loading..."
-            }
-
-            {/*  Old WeatherBox data mapping */}
-            {/* {data ? 
-                 thisWeek.map((dayData, index) => <WeatherBox key={index} weekDay={dayData.currentData.weekDay} temp={dayData.currentData.temp} desc={dayData.currentData.desc} img={dayData.currentData.img}/>)
-                : "Weather Box Loading..."}  */}
+                {/*  Old WeatherBox data mapping */}
+                {/* {data ? 
+                        thisWeek.map((dayData, index) => <WeatherBox key={index} weekDay={dayData.currentData.weekDay} temp={dayData.currentData.temp} desc={dayData.currentData.desc} img={dayData.currentData.img}/>)
+                    : "Weather Box Loading..."}  */}
+            </div>
         </div>
      );
 }

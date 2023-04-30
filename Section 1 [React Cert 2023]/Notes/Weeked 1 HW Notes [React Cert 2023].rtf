@@ -142,6 +142,18 @@ From react.dev:\
 \f1 \cf4 \
 \ul Next Steps\ulnone \
 Master map & spread (\'85)\
-\ul \
+\
+Destructuring: \
+const \{today, thisWeek\} = props;\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf6 \cb3 \outl0\strokewidth0 \strokec6 // Syntactic sugar to store props in local variables\cf7 \cb1 \strokec7 \
+\cf6 \cb3 \strokec6     // Without this, would have to prefix them with props.today (<h1>\{props.today.title\}</h1>)\cf7 \cb1 \strokec7 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3 \strokec8     const\cf7 \strokec7  \{\cf9 \strokec9 title\cf7 \strokec7 , \cf9 \strokec9 styles\cf7 \strokec7 , \cf9 \strokec9 temp\cf7 \strokec7 , \cf9 \strokec9 desc\cf7 \strokec7 , \cf9 \strokec9 img\cf7 \strokec7 \}\cf8 \strokec8  =\cf7 \strokec7  \cf12 \strokec12 props\cf8 \strokec8 .\cf7 \strokec7 today;\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf4 \ul \ulc4 \outl0\strokewidth0 \
 \
 }
