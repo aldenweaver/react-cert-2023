@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 // import "./WeatherBox.css";
 
 function WeatherBox(props) {
-
+    
+    // console.log(`props: ${JSON.stringify(props)}`);
+    
     return ( 
         <div className="weather-box">
             {/* <h1>{props.date ? getDay(props.date) : ""}</h1> */}
