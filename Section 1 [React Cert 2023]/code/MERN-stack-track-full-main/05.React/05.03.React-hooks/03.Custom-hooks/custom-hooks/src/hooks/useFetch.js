@@ -5,11 +5,12 @@ function useFetch() {
     // useState requires a parameter of an initial state value
     const[data, setData] = useState(null);
 
-    const [isLoading, setIsLoading] = useState(true);
+    // Use false as an initial isLoading state
+    const [isLoading, setIsLoading] = useState(false);
 
     const [url, setUrl] = useState("");
 
-    // Fetch data from the give url
+    // Fetch data from the given url
     // then 
     // then
     // Only run useEffect whenever url is set
