@@ -1,0 +1,31 @@
+/* Extra Unused Code Snippets */
+
+{/* Modified from Spotify Developer site */}
+{/* async function getTopTracks(){
+    // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
+    return (await fetchWebApi(
+        apiEndpoint, method, body
+    )).items;
+} */}
+{/* End Modified from Spotify Dev code */}
+
+// function getTopTracks() {
+//     // Call the custom fetch hook useAsyncAuthFetch to get the data & store the variables it returns in local (state?) variable data
+//     // const [data, isLoading, apiProps, setTopXInput] = useAsyncAuthFetch();
+// } 
+
+{/* From Spotify Developer site */}
+// const topTracks = await getTopTracks();
+// console.log(
+//     topTracks?.map(
+//         ({name, artists}) =>
+//         `${name} by ${artists.map(artist => artist.name).join(', ')}`
+//     )
+// );
+{/* End Spotify Dev code */}
+
+{/* Modified from Spotify Developer site */}
+{/* {data ? 
+    data.map(({name, artists}) => `${name} by ${artists.map(artist => artist.name).join(', ')}`) 
+    : "Loading data from Spotify API..."} */}
+{/* End Modified from Spotify Dev code */}

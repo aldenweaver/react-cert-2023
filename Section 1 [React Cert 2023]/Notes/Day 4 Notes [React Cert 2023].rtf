@@ -3,13 +3,13 @@
 \f3\fnil\fcharset0 Monaco;\f4\fnil\fcharset0 Menlo-Regular;}
 {\colortbl;\red255\green255\blue255;\red13\green14\blue17;\red83\green93\blue104;\red255\green255\blue255;
 \red5\green40\blue131;\red5\green25\blue80;\red141\green0\blue24;\red78\green16\blue174;\red92\green32\blue1;
-\red9\green61\blue20;\red13\green14\blue17;\red22\green21\blue22;\red22\green21\blue22;\red0\green0\blue0;
-\red0\green0\blue0;\red250\green195\blue196;}
+\red9\green61\blue20;\red22\green21\blue22;\red22\green21\blue22;\red0\green0\blue0;\red0\green0\blue0;
+\red250\green195\blue196;\red223\green35\blue55;\red250\green195\blue196;}
 {\*\expandedcolortbl;;\cssrgb\c5490\c6667\c8627;\cssrgb\c40000\c43922\c48235;\cssrgb\c100000\c100000\c100000;
 \cssrgb\c784\c23137\c58431;\cssrgb\c1176\c14510\c38824;\cssrgb\c62745\c6667\c12157;\cssrgb\c38431\c17255\c73725;\cssrgb\c43922\c17255\c0;
-\cssrgb\c784\c29804\c10196;\cssrgb\c5490\c6667\c8627;\cssrgb\c11373\c10980\c11373;\cssrgb\c11373\c10980\c11373\c3922;\cssrgb\c0\c0\c0;
-\csgray\c0\c0;\cssrgb\c98824\c81176\c81176;}
-\margl1440\margr1440\vieww10060\viewh18500\viewkind0
+\cssrgb\c784\c29804\c10196;\cssrgb\c11373\c10980\c11373;\cssrgb\c11373\c10980\c11373\c3922;\cssrgb\c0\c0\c0;\csgray\c0\c0;
+\cssrgb\c98824\c81176\c81176;\cssrgb\c90980\c23137\c27451;\cssrgb\c98824\c81176\c81176;}
+\margl1440\margr1440\vieww10060\viewh15280\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 
 \f0\b\fs30 \cf0 Day 4 Notes [React Cert 2023]
@@ -20,12 +20,12 @@
 From readme: \
 \'93
 \f2 \cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Hooks are reusable functions.\
+Hooks are reusable functions.\
 \pard\pardeftab720\sa196\partightenfactor0
 \cf2 When you have component logic that needs to be used by multiple components, we can extract that logic into a custom Hook.\
 Custom Hooks should start with "use", for example\'a0
 \f3 useFetch
-\f1 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \'94\
+\f1 \cf0 \kerning1\expnd0\expndtw0 \'94\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 useAxios\
 We will be building this out & showing examples of fetch/axios calls & different ways to handle that in React\
@@ -36,7 +36,7 @@ JSON placeholder for practicing with mock data: https://jsonplaceholder.typicode
 \pard\pardeftab720\partightenfactor0
 
 \f4 \cf3 \cb4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3  // useState requires a parameter of an initial state value\cf2 \cb1 \strokec2 \
+ // useState requires a parameter of an initial state value\cf2 \cb1 \
 \
 \
 .then(function) can be attached to fetch\
@@ -44,35 +44,34 @@ Handles asynchronous functions\
 These are the actions that should take place when the data comes back from the function it is called on\
 \
 \pard\pardeftab720\partightenfactor0
-\cf5 \cb4 \strokec5 fetch\cf2 \strokec2 (\cf6 \strokec6 "https://jsonplaceholder.typicode.com/todos"\cf2 \strokec2 )\cf2 \cb1 \strokec2 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb4 \strokec2       \cf7 \strokec7 .\cf8 \strokec8 then\cf2 \strokec2 ((\cf9 \strokec9 res\cf2 \strokec2 ) \cf7 \strokec7 =>\cf2 \strokec2  \cf9 \strokec9 res\cf7 \strokec7 .\cf8 \strokec8 json\cf2 \strokec2 ())\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2       \cf7 \strokec7 .\cf8 \strokec8 then\cf2 \strokec2 ((\cf9 \strokec9 data\cf2 \strokec2 ) \cf7 \strokec7 =>\cf2 \strokec2  \cf8 \strokec8 setData\cf2 \strokec2 (\cf9 \strokec9 data\cf2 \strokec2 ));\cf2 \cb1 \strokec2 \
+\cf5 \cb4 fetch\cf2 (\cf6 "https://jsonplaceholder.typicode.com/todos"\cf2 )\cb1 \
+\cb4       \cf7 .\cf8 then\cf2 ((\cf9 res\cf2 ) \cf7 =>\cf2  \cf9 res\cf7 .\cf8 json\cf2 ())\cb1 \
+\cb4       \cf7 .\cf8 then\cf2 ((\cf9 data\cf2 ) \cf7 =>\cf2  \cf8 setData\cf2 (\cf9 data\cf2 ));\cb1 \
 \
 \
 \
 Empty array means useEffect runs only one times whenever the component is loaded up\
-\cf2 \cb4 \strokec2   \cf8 \strokec8 useEffect\cf2 \strokec2 (() \cf7 \strokec7 =>\cf2 \strokec2  \{\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2     \cf5 \strokec5 fetch\cf2 \strokec2 (\cf6 \strokec6 "https://jsonplaceholder.typicode.com/todos"\cf2 \strokec2 )\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2       \cf7 \strokec7 .\cf8 \strokec8 then\cf2 \strokec2 ((\cf9 \strokec9 res\cf2 \strokec2 ) \cf7 \strokec7 =>\cf2 \strokec2  \cf9 \strokec9 res\cf7 \strokec7 .\cf8 \strokec8 json\cf2 \strokec2 ())\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2       \cf7 \strokec7 .\cf8 \strokec8 then\cf2 \strokec2 ((\cf9 \strokec9 data\cf2 \strokec2 ) \cf7 \strokec7 =>\cf2 \strokec2  \cf8 \strokec8 setData\cf2 \strokec2 (\cf9 \strokec9 data\cf2 \strokec2 ));\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2   \}, []);\cf2 \cb1 \strokec2 \
+\cb4   \cf8 useEffect\cf2 (() \cf7 =>\cf2  \{\cb1 \
+\cb4     \cf5 fetch\cf2 (\cf6 "https://jsonplaceholder.typicode.com/todos"\cf2 )\cb1 \
+\cb4       \cf7 .\cf8 then\cf2 ((\cf9 res\cf2 ) \cf7 =>\cf2  \cf9 res\cf7 .\cf8 json\cf2 ())\cb1 \
+\cb4       \cf7 .\cf8 then\cf2 ((\cf9 data\cf2 ) \cf7 =>\cf2  \cf8 setData\cf2 (\cf9 data\cf2 ));\cb1 \
+\cb4   \}, []);\cb1 \
 \
 \
 Conditional:\
-\{\cf5 \cb4 \strokec5 data\cf7 \strokec7  &&\cf2 \strokec2  \cf5 \strokec5 data\cf7 \strokec7 .\cf8 \strokec8 map\cf2 \cb1 \strokec2 ()\}\
+\{\cf5 \cb4 data\cf7  &&\cf2  \cf5 data\cf7 .\cf8 map\cf2 \cb1 ()\}\
 If the data does not exist (is null), then the data.map() after the && resolves false & will not run\
 Once data is set, component refreshes and since data will now evaluate to true, the map after the && will run\
 \pard\pardeftab720\partightenfactor0
-\cf7 \cb4 \strokec7 \{\cf5 \strokec5 data\cf7 \strokec7  &&\cf2 \strokec2  \cf5 \strokec5 data\cf7 \strokec7 .\cf8 \strokec8 map\cf2 \strokec2 ((\cf9 \strokec9 item\cf2 \strokec2 ) \cf7 \strokec7 =>\cf2 \strokec2  \{\cf2 \cb1 \strokec2 \
-\cf7 \cb4 \strokec7         return\cf2 \strokec2  <\cf10 \cb4 \strokec10 p\cf2 \cb4 \strokec2  \cf5 \strokec5 key\cf7 \strokec7 =\{\cf9 \strokec9 item\cf7 \strokec7 .\cf2 \strokec2 id\cf7 \strokec7 \}\cf2 \strokec2 >\cf7 \strokec7 \{\cf9 \strokec9 item\cf7 \strokec7 .\cf2 \strokec2 title\cf7 \strokec7 \}\cf2 \strokec2 </\cf10 \cb4 \strokec10 p\cf2 \cb4 \strokec2 >\cf2 \cb1 \strokec2 \
+\cf7 \cb4 \{\cf5 data\cf7  &&\cf2  \cf5 data\cf7 .\cf8 map\cf2 ((\cf9 item\cf2 ) \cf7 =>\cf2  \{\cb1 \
+\cf7 \cb4         return\cf2  <\cf10 p\cf2  \cf5 key\cf7 =\{\cf9 item\cf7 .\cf2 id\cf7 \}\cf2 >\cf7 \{\cf9 item\cf7 .\cf2 title\cf7 \}\cf2 </\cf10 p\cf2 >\cb1 \
 \pard\pardeftab720\partightenfactor0
-\cf2 \cb4 \strokec2       \})\cf7 \strokec7 \}\cf2 \cb1 \strokec2 \
+\cf2 \cb4       \})\cf7 \}\cf2 \cb1 \
 \
 \
 From readme: \'93
-\f2 \cf2 \strokec2 The "data &&" before the map is a conditional statement that checks if the data variable is truthy. If it is truthy, the code inside the curly braces will be executed. This is done to prevent the map function from running on a null or undefined data variable, which would cause an error. It is a way of checking if the data has been successfully fetched before trying to map over it.
-\f4 \cf2 \strokec2 \'94\
+\f2 The "data &&" before the map is a conditional statement that checks if the data variable is truthy. If it is truthy, the code inside the curly braces will be executed. This is done to prevent the map function from running on a null or undefined data variable, which would cause an error. It is a way of checking if the data has been successfully fetched before trying to map over it.
+\f4 \'94\
 \
 Technically, the component loads twice every time it loads because when the code first runs, data is null, so map will not run. Then useEffect is run on component load, returns data. Since returned data is then set to state, the state changing will cause the component to reload/rerender.\
 \
@@ -86,11 +85,11 @@ This way, you don\'92t have to keep track of passing around state to components\
 \
 This code goes from App.js to useFetch.js custom hook:\
 \pard\pardeftab720\partightenfactor0
-\cf3 \cb4 \strokec3 // Contain the data that will come back from an API call (in this case, JSON placeholder)\cf2 \cb1 \strokec2 \
-\cf3 \cb4 \strokec3   // useState requires a parameter of an initial state value\cf2 \cb1 \strokec2 \
-\cf7 \cb4 \strokec7   const\cf2 \strokec2 [\cf5 \strokec5 data\cf2 \strokec2 , \cf8 \strokec8 setData\cf2 \strokec2 ]\cf7 \strokec7  =\cf2 \strokec2  \cf8 \strokec8 useState\cf2 \strokec2 (\cf5 \strokec5 null\cf2 \strokec2 );\cf2 \cb1 \strokec2 \
+\cf3 \cb4 // Contain the data that will come back from an API call (in this case, JSON placeholder)\cf2 \cb1 \
+\cf3 \cb4   // useState requires a parameter of an initial state value\cf2 \cb1 \
 \pard\pardeftab720\partightenfactor0
-\cf2 \
+\cf7 \cb4   const\cf2 [\cf5 data\cf2 , \cf8 setData\cf2 ]\cf7  =\cf2  \cf8 useState\cf2 (\cf5 null\cf2 );\cb1 \
+\
 useEffect containing fetch also goes in custom hook, now replace hard-coded URL with variable url.\
 \
 A reusable set of functionality should be stored in a custom hook\
@@ -102,15 +101,16 @@ Can reuse custom hooks on multiple components\
 \
 \
 Make a component that uses useFetch to get data from public API of choosing & display returned data\
-API: \cf11 \outl0\strokewidth0 https://animechan.vercel.app/\cf2 \outl0\strokewidth0 \strokec2 \
+API: https://animechan.vercel.app/\
 npx create-react-app anime-quoter\
 https://animechan.vercel.app/\
 @mui nom: npm install @mui/material @emotion/react @emotion/styled\
 \
 if localhost port says its busy: 
-\f3 \cf12 \cb13 \strokec12 npx kill-port 3000\
+\f3 \cf11 \cb12 npx kill-port 3000\
+\pard\pardeftab720\partightenfactor0
 
-\f4 \cf2 \cb1 \strokec2 \
+\f4 \cf2 \cb1 \
 \
 conditional rendering\
 \
@@ -119,23 +119,22 @@ have function on useFetch side, then pass into custom component\
 \
 \
 \pard\pardeftab720\partightenfactor0
-\cf6 \cb4 \strokec6 Display multiple quotes\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6 \{data && data\cf5 \strokec5 .\cf6 \strokec6 map((\cf9 \strokec9 quote\cf6 \strokec6 ) => \{\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6     return (\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6         <>\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6             \{data \cf7 \strokec7 ?\cf6 \strokec6  \cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6                 <li key=\{\cf9 \strokec9 quote\cf5 \strokec5 .\cf6 \strokec6 id\}>\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6                     <h3>\{\cf9 \strokec9 quote\cf5 \strokec5 .\cf6 \strokec6 character\}:</h3>\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6                     <p>"\{\cf9 \strokec9 quote\cf5 \strokec5 .\cf6 \strokec6 quote\}"</p>\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6                     <h4>\{\cf9 \strokec9 quote\cf5 \strokec5 .\cf6 \strokec6 anime\}:</h4>\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6                 </li>\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6             : "Loading data from API\cf5 \strokec5 ...\cf6 \strokec6 "\}\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6         </>\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6     );\cf2 \cb1 \strokec2 \
-\cf6 \cb4 \strokec6 \})\}\cf2 \cb1 \strokec2 \
+\cf6 \cb4 Display multiple quotes\cf2 \cb1 \
+\cf6 \cb4 \{data && data\cf5 .\cf6 map((\cf9 quote\cf6 ) => \{\cf2 \cb1 \
+\cf6 \cb4     return (\cf2 \cb1 \
+\cf6 \cb4         <>\cf2 \cb1 \
+\cf6 \cb4             \{data \cf7 ?\cf6  \cf2 \cb1 \
+\cf6 \cb4                 <li key=\{\cf9 quote\cf5 .\cf6 id\}>\cf2 \cb1 \
+\cf6 \cb4                     <h3>\{\cf9 quote\cf5 .\cf6 character\}:</h3>\cf2 \cb1 \
+\cf6 \cb4                     <p>"\{\cf9 quote\cf5 .\cf6 quote\}"</p>\cf2 \cb1 \
+\cf6 \cb4                     <h4>\{\cf9 quote\cf5 .\cf6 anime\}:</h4>\cf2 \cb1 \
+\cf6 \cb4                 </li>\cf2 \cb1 \
+\cf6 \cb4             : "Loading data from API\cf5 ...\cf6 "\}\cf2 \cb1 \
+\cf6 \cb4         </>\cf2 \cb1 \
+\cf6 \cb4     );\cf2 \cb1 \
+\cf6 \cb4 \})\}\cf2 \cb1 \
 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \
+\
 \
 Note: map will not work on a single item!\
 \
@@ -145,24 +144,22 @@ Pokemon API: https://pokeapi.co/docs/v2\
 \
 Conditional rendering\
 \pard\pardeftab720\partightenfactor0
-\cf7 \cb4 \strokec7 \{\cf5 \strokec5 isLoading\cf7 \strokec7  &&\cf2 \strokec2  <\cf10 \cb4 \strokec10 p\cf2 \cb4 \strokec2 >Loading API data...</\cf10 \cb4 \strokec10 p\cf2 \cb4 \strokec2 >\cf7 \strokec7 \}\cf2 \cb1 \strokec2 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb4 \strokec7 \{!\cf5 \strokec5 isLoading\cf7 \strokec7  &&\cf2 \strokec2  \cf5 \strokec5 data\cf7 \strokec7  &&\cf2 \strokec2  \cf5 \strokec5 data\cf7 \strokec7 .\cf2 \strokec2 moves\cf7 \strokec7 .\cf8 \strokec8 map\cf2 \strokec2 ((\cf9 \strokec9 oneMove\cf2 \strokec2 , \cf9 \strokec9 index\cf2 \strokec2 ) \cf7 \strokec7 =>\cf2 \strokec2  \{\cf2 \cb1 \strokec2 \
-\cf7 \cb4 \strokec7                     return\cf2 \strokec2 (\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2                         <\cf10 \cb4 \strokec10 li\cf2 \cb4 \strokec2  \cf5 \strokec5 key\cf7 \strokec7 =\{\cf9 \strokec9 index\cf7 \strokec7 \}\cf2 \strokec2 >\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2                             \cf7 \strokec7 \{\cf9 \strokec9 oneMove\cf7 \strokec7 .\cf2 \strokec2 move\cf7 \strokec7 .\cf2 \strokec2 name\cf7 \strokec7 \}\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2                         </\cf10 \cb4 \strokec10 li\cf2 \cb4 \strokec2 >\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2                     )\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2                 \})\cf7 \strokec7 \}\cf2 \cb1 \strokec2 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \
+\cf7 \cb4 \{\cf5 isLoading\cf7  &&\cf2  <\cf10 p\cf2 >Loading API data...</\cf10 p\cf2 >\cf7 \}\cf2 \cb1 \
 \
-Can you call a custom hook from another custom hook? \cf14 \cb15 Yes\
+\cf7 \cb4 \{!\cf5 isLoading\cf7  &&\cf2  \cf5 data\cf7  &&\cf2  \cf5 data\cf7 .\cf2 moves\cf7 .\cf8 map\cf2 ((\cf9 oneMove\cf2 , \cf9 index\cf2 ) \cf7 =>\cf2  \{\cb1 \
+\cf7 \cb4                     return\cf2 (\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb4                         <\cf10 li\cf2  \cf5 key\cf7 =\{\cf9 index\cf7 \}\cf2 >\cb1 \
+\cb4                             \cf7 \{\cf9 oneMove\cf7 .\cf2 move\cf7 .\cf2 name\cf7 \}\cf2 \cb1 \
+\cb4                         </\cf10 li\cf2 >\cb1 \
+\cb4                     )\cb1 \
+\cb4                 \})\cf7 \}\cf2 \cb1 \
+\
+\
+Can you call a custom hook from another custom hook? \cf13 \cb14 Yes\
 https://react.dev/learn/reusing-logic-with-custom-hooks#should-all-functions-called-during-rendering-start-with-the-use-prefix\
 \pard\pardeftab720\partightenfactor0
-\cf14 \strokec16 Error: Rendered more hooks than during the previous render.\strokec2 \
+\cf13 Error: Rendered more hooks than during the previous render.\
 \pard\pardeftab720\partightenfactor0
 \cf2 \cb1 \
 Hooks outsource functionality so you don\'92t have to \
@@ -171,11 +168,10 @@ worry about props & scope\
 Hook is an engine, & const state/setState are levers/pipes under the hood\
 \
 Doesn\'92t work:\
+\cf3 \cb4  // Call the custom hook useGetTopTracks to get the data\cf2 \cb1 \
 \pard\pardeftab720\partightenfactor0
-\cf3 \cb4 \strokec3  // Call the custom hook useGetTopTracks to get the data\cf2 \cb1 \strokec2 \
-\cf2 \cb4 \strokec2         \cf8 \strokec8 setData\cf2 \strokec2 (\cf8 \strokec8 useGetTopTracks\cf2 \strokec2 ()); \cf2 \cb1 \strokec2 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \
+\cf2 \cb4         \cf8 setData\cf2 (\cf8 useGetTopTracks\cf2 ()); \cb1 \
+\
 Works:\
 \
 \
@@ -187,21 +183,80 @@ return setState var from custom hook to use from a different file\
 \
 *How to pass properties to a hook when you are declaring/assigning them in another hook calling that hook\
 \
-\
-\ul Reference\ulnone \
-Spotify API: https://developer.spotify.com/documentation/web-api\
-Fetch JS API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs28\fsmilli14400 \cf13 \cb14 \outl0\strokewidth0 \strokec16 ERROR\
+
+\f4\fs24 \strokec17 Too many re-renders. React limits the number of renders to prevent an infinite loop.\cf17 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs30 \cf2 \outl0\strokewidth0 \
 \
 \
 \pard\pardeftab720\partightenfactor0
-\cf11 \ul \ulc11 \outl0\strokewidth0 To Review\ulnone \
+\cf2 \ul Reference\ulnone \
+Spotify API: https://developer.spotify.com/documentation/web-api\
+Fetch JS API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch\
+Custom Hooks: https://react.dev/learn/reusing-logic-with-custom-hooks\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \ul \ulc2 To Review\ulnone \
 Conditional rendering\
 Next.js\
 \
-https://developer.spotify.com/\cf2 \outl0\strokewidth0 \strokec2 \
+https://developer.spotify.com/\
+\
+https://react.dev/learn/sharing-state-between-components\
+\
+JSX & expressions, conditional assignment: https://react.dev/learn/conditional-rendering#conditionally-assigning-jsx-to-a-variable\
+\
+Arrow Functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions\
 \
 \
-\ul React Router\ulnone \
+https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary\
+\
+\
+Reacting to input with state: https://react.dev/learn/managing-state#reacting-to-input-with-state\
+\
+\
+\ul Questions\ulnone \
+Can you call custom hooks inside component helper functions?\
+I don\'92t think so, because you store the results of hooks in const state variables at the top of the functional component function structure, so the scope wouldn\'92t work? Unless you do useState?\
+\
+\
+\ul Coming Up: React Router\ulnone \
 Linking from page to page, but linking from component to component so you can link data between/across components on different pages\
 \
-All components you write can be available when the page loads}
+All components you write can be available when the page loads\
+\
+\
+\ul Stack Overflow Answer Draft\ulnone \
+\
+I also encountered this error, using React v18.\
+Mine happened not on a button as per the original question, but on an input field.\
+\
+    <input value=\{input\} onChange=\{(e) => setInput(e.target.value)\}/>\
+\
+The answers for the original question suggested using an arrow function to handle the HTML component's event.\
+For reference, here is MDN's documentation on arrow functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions\
+\
+However, since my code is already written using an arrow function, I had to figure out the issue a different way.\
+\
+The following React doc is useful for understanding this issue: https://react.dev/learn/managing-state#reacting-to-input-with-state\
+\
+The following code would go inside a custom functional component:\
+\
+    // Handler function for setting input state variable when the value of the HTML input field changes\
+    function handleInputChange(e) \{\
+        setInput(e.target.value);\
+    \}\
+\
+    // Custom functional component return statement\
+    return ( \
+        <>\
+            <input value=\{input\} onChange=\{(e) => handleInputChange(e)\}/>\
+        </>\
+    );\
+\
+Also, @Chris has a really good explanation. Here is an updated link for the link he referenced about JSX & expressions: https://react.dev/learn/conditional-rendering#conditionally-assigning-jsx-to-a-variable}

@@ -2,26 +2,14 @@
 import React, { useState, useEffect } from 'react';
 
 function useAsyncAuthFetch() {
+  // Contain the data that will come back from the API call via the cutom fetch hook
+    const [data, setData] = useState(null);
+
     // Flag to determine app state based on API call status
     const [isLoading, setIsLoading] = useState(false);
 
-    // Contain the data that will come back from the API call via the cutom fetch hook
-    const [data, setData] = useState(null);
-
-    // URL of API
-    const [apiUrl, setApiUrl] = useState("");
-
-    // API endpoint to query
-    const [apiEndpoint, setApiEndpoint] = useState("");
-
-    // Token for API authenitcation
-    const[token, setToken] = useState("");
-
-    // API command (e.g., GET, POST, etc)
-    const[method, setMethod] = useState("");
-
-    // Data to send to API
-    const[body, setBody] = useState("");
+    // Used to locally manipulate the props passed down
+    const [apiProps, setApiProps] = useState(null);
 
     // Fetch data from the given url
     useEffect(() => {
@@ -29,12 +17,12 @@ function useAsyncAuthFetch() {
 
       {/* Modified from Spotify Developer site */}
       async function fetchWebApi() {
-        const res = await fetch(`${apiUrl}/${apiEndpoint}`, {
+        const res = await fetch(`${apiProps.url}/${apiProps.endpoint}`, {
             headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${apiProps.token}`,
             },
-            method,
-            body:JSON.stringify(body)
+            method: apiProps.method,
+            body:JSON.stringify(apiProps.body)
         });
 
         return await res.json();
@@ -49,10 +37,10 @@ function useAsyncAuthFetch() {
               // Turn off loading flag once data comes back
               setIsLoading(false);
       });
-    }, [isLoading, setIsLoading, apiUrl, apiEndpoint, token, method, body]);   
+    }, [apiProps]);   
 
     // Return data state variable
-    return [data, isLoading];
+    return [data, isLoading, setApiProps];
 }
 
 export default useAsyncAuthFetch;
