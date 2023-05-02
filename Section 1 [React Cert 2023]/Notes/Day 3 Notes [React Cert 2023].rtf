@@ -1,6 +1,5 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2639
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;
-\f3\fnil\fcharset0 Menlo-Regular;}
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;}
 {\colortbl;\red255\green255\blue255;\red24\green26\blue30;\red255\green255\blue255;\red83\green93\blue104;
 \red13\green14\blue17;\red141\green0\blue24;\red92\green32\blue1;\red78\green16\blue174;\red5\green25\blue80;
 \red5\green40\blue131;\red9\green61\blue20;}
@@ -38,8 +37,7 @@ Can map a functional component new a new component to hold all the components in
 \clmgf \clvertalt \clshdrawnil \clwWidth2180\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl200 \clpadr200 \gaph\cellx4320
 \clmrg \clvertalt \clshdrawnil \clwWidth2180\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl200 \clpadr200 \gaph\cellx8640
 \pard\intbl\itap1\pardeftab720\partightenfactor0
-
-\f2 \cf2 \expnd0\expndtw0\kerning0
+\cf2 \expnd0\expndtw0\kerning0
   render() \{\cell 
 \pard\intbl\itap1\cell \row
 
@@ -213,29 +211,20 @@ Can map a functional component new a new component to hold all the components in
 \pard\intbl\itap1\pardeftab720\partightenfactor0
 \cf2   \}\cell \lastrow\row
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f1 \cf0 \kerning1\expnd0\expndtw0 \
+\cf0 \kerning1\expnd0\expndtw0 \
 \
 \pard\pardeftab720\partightenfactor0
 \cf4 \cb3 \expnd0\expndtw0\kerning0
 Source and style of an img tag can both depend on props\cf5 \cb1 \
-(Custom) component tags are usually self-closing. If they want to nest other tags, they must have a placeholder in the JSX in their component code containing the JS \{this.props.children\}.
-\f3 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \
+(Custom) component tags are usually self-closing. If they want to nest other tags, they must have a placeholder in the JSX in their component code containing the JS \{this.props.children\}.\
 \
-Ternary operator is shorthand JS if then statement
-\f3 \
+\
+Ternary operator is shorthand JS if then statement\
 \pard\pardeftab720\partightenfactor0
 \cf6 \cb3 \{\cf7 props\cf6 .\cf5 data \cf6 ?\cf5  \cf8 require\cf5 (\cf9 `../images/\cf10 $\{\cf7 props\cf6 .\cf5 data\cf6 .\cf5 icon\cf10 \}\cf9 .svg`\cf5 ) \cf6 :\cf5  \cf8 require\cf5 (\cf9 '.../images/01d.svg'\cf5 )\cf6 \}\cf5 \cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 Check if above is consistent with best practices
-\f3 \
+Check if above is consistent with best practices\
 \
 \
-\pard\pardeftab720\partightenfactor0
 \cf10 \cb3 style\cf6 =\{\cf5 \{\cf10  \cf5 visibility\cf10  :\cf5  \cf7 props\cf6 .\cf5 city \cf6 ?\cf5  \cf9 'visible'\cf5  \cf6 :\cf5  \cf9 'hidden'\cf5 ,\cb1  \cb3 opacity\cf10 :\cf5  \cf7 props\cf6 .\cf5 city \cf6 ?\cf5  \cf9 '1'\cf5  \cf6 :\cf5  \cf9 '0'\cf5 \cb1  \cb3 \}\cf6 \}\cf5 \cb1 \
 \
 \
@@ -243,24 +232,18 @@ Ternary operator is shorthand JS if then statement
 \cb3                     <\cf11 h1\cf5 >\cf6 \{\cf7 props\cf6 .\cf5 city\cf6 \}\cf5 </\cf11 h1\cf5 >\cb1 \
 \cb3                     <\cf11 p\cf5 >Temperature: \cf6 \{\cf7 props\cf6 .\cf5 data \cf6 ?\cf10  Math\cf6 .\cf8 round\cf5 (\cf7 props\cf6 .\cf5 data\cf6 .\cf5 temp\cf6  -\cf5  \cf10 273.15\cf5 ) \cf6 :\cf5  \cf10 0\cf6 \}\cf5  \'b0C</\cf11 p\cf5 >\cb1 \
 \cb3                     <\cf11 p\cf5 >\cf6 \{\cf7 props\cf6 .\cf5 data \cf6 ?\cf5  \cf7 props\cf6 .\cf5 data\cf6 .\cf5 weather_desc\cf6 .\cf8 toLowerCase\cf5 () \cf6 :\cf5  \cf9 ""\cf6 \}\cf5 </\cf11 p\cf5 >\
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \
+\
 \
 \
 If state is managed at App.js level, it makes it easier because it is easier to pass data down than to pass data up\
 Wherever the input field is, a state var can keep track of input field value. On submit of input field, perform API call. Means state has to be managed at input field level or one component above it. (Is this best practice? Which one is? App.js level or parent component level or component level?\cb1 \
-*Figure out best practices for how/where to keep track of each user input?
-\f3 \
+*Figure out best practices for how/where to keep track of each user input?\
 \
 \
-\pard\pardeftab720\partightenfactor0
 \cf6 \cb3 function\cf5  \cf8 handleInput\cf5 (\cf7 e\cf5 ) \{\cb1 \
 \cb3    \cf8 setInput\cf5 (\cf7 e\cf6 .\cf5 target\cf6 .\cf5 value);\cb1 \
 \cb3 \}\
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \
+\
 To keep track of the input, you bind the value on the HTML tag to the input in state\
 Type into state var on virtualDOM, which allows you to see what you type displayed in a different component than the input field as you type into the input field\
 \
@@ -303,13 +286,10 @@ API sets loading to false when it returns (no matter if the result is an error o
 When you call an API, the first thing you want to do is prevent page reload\
 \
 \pard\pardeftab720\partightenfactor0
-
-\f3 \cf4 // Prevent page reload\cf5 \cb1 \
+\cf4 // Prevent page reload\cf5 \cb1 \
 \pard\pardeftab720\partightenfactor0
 \cf5 \cb3         \cf7 e\cf6 .\cf8 preventDefault\cf5 ();\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+\cb3 \
 \
 npm install axios\
 \
@@ -318,12 +298,8 @@ When you hit enter, you can take an action at that moment\
 \
 data.slice(1) is useful for taking the first element of an array\
 Only display the WeatherBox when the data is returned, otherwise, say waiting\
-\pard\pardeftab720\partightenfactor0
-
-\f3 \cf5 <>\cf6 \{\cf10 data\cf5  \cf6 ?\cf5  <\cf11 WeatherBox\cf5 /> \cf6 :\cf5  \cf9 "Waiting..."\cf6 \}\cf5 </>\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+<>\cf6 \{\cf10 data\cf5  \cf6 ?\cf5  <\cf11 WeatherBox\cf5 /> \cf6 :\cf5  \cf9 "Waiting..."\cf6 \}\cf5 </>\cb1 \
+\cb3 \
 Data.cod - look up what cod stands for, is that stand or specific to this example?\
 \
 *Versions/states of app & components before, during, & after user interactions\
@@ -334,9 +310,7 @@ Objects are not valid as React child components, must use arrays (? Error)\
 \
 \
 \
-\pard\pardeftab720\partightenfactor0
-
-\f3 \cf8 useEffect\cf5 (() \cf6 =>\cf5  \{\cb1 \
+\cf8 useEffect\cf5 (() \cf6 =>\cf5  \{\cb1 \
 \pard\pardeftab720\partightenfactor0
 \cf4 \cb3         // This if statement makes sure actions only take place after the search returns with data\cf5 \cb1 \
 \pard\pardeftab720\partightenfactor0
@@ -344,9 +318,7 @@ Objects are not valid as React child components, must use arrays (? Error)\
 \cb3             \cf8 setTitle\cf5 (<\cf11 h1\cf5  \cf10 className\cf6 =\cf9 "title"\cf5 >\cf6 \{\cf10 data\cf6 .\cf5 city\cf6 .\cf5 name\cf6 \}\cf5 </\cf11 h1\cf5 >);\cb1 \
 \cb3         \}\cb1 \
 \cb3     \}, [\cf10 loading\cf5 ]);\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+\cb3 \
 \
 Use effect checks if loading has changed, & if it has, it performs the callback function ?\
 \
@@ -355,8 +327,7 @@ The inside of the if statement is the search is complete & the data is back\
 All changes need to happen on the inside of this if statement\
 \
 \pard\pardeftab720\partightenfactor0
-
-\f3 \cf4 // Will run only when loading is set by useAxios\cf5 \cb1 \
+\cf4 // Will run only when loading is set by useAxios\cf5 \cb1 \
 \pard\pardeftab720\partightenfactor0
 \cf5 \cb3     \cf8 useEffect\cf5 (() \cf6 =>\cf5  \{\cb1 \
 \pard\pardeftab720\partightenfactor0
@@ -366,56 +337,32 @@ All changes need to happen on the inside of this if statement\
 \cb3             \cf8 setTitle\cf5 (<\cf11 h1\cf5  \cf10 className\cf6 =\cf9 "title"\cf5 >\cf6 \{\cf10 data\cf6 .\cf5 city\cf6 .\cf5 name\cf6 \}\cf5 </\cf11 h1\cf5 >);\cb1 \
 \cb3         \}\cb1 \
 \cb3     \}, [\cf10 loading\cf5 ]);\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+\cb3 \
 \
 Old\
-\pard\pardeftab720\partightenfactor0
-
-\f3 \cf5 <\cf11 p\cf5 >Temperature: \cf6 \{\cf7 props\cf6 .\cf5 data \cf6 ?\cf10  Math\cf6 .\cf8 round\cf5 (\cf7 props\cf6 .\cf5 data\cf6 .\cf5 temp\cf6  -\cf5  \cf10 273.15\cf5 ) \cf6 :\cf5  \cf10 0\cf6 \}\cf5  \'b0C</\cf11 p\cf5 >\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+<\cf11 p\cf5 >Temperature: \cf6 \{\cf7 props\cf6 .\cf5 data \cf6 ?\cf10  Math\cf6 .\cf8 round\cf5 (\cf7 props\cf6 .\cf5 data\cf6 .\cf5 temp\cf6  -\cf5  \cf10 273.15\cf5 ) \cf6 :\cf5  \cf10 0\cf6 \}\cf5  \'b0C</\cf11 p\cf5 >\cb1 \
+\cb3 \
 New\
-\pard\pardeftab720\partightenfactor0
-
-\f3 \cf5 <\cf11 p\cf5 >Temperature: \cf6 \{\cf10 Math\cf6 .\cf8 round\cf5 (\cf10 today\cf6 .\cf5 temp\cf6  -\cf5  \cf10 273.15\cf5 )\cf6 \}\cf5  \'b0C</\cf11 p\cf5 >\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+<\cf11 p\cf5 >Temperature: \cf6 \{\cf10 Math\cf6 .\cf8 round\cf5 (\cf10 today\cf6 .\cf5 temp\cf6  -\cf5  \cf10 273.15\cf5 )\cf6 \}\cf5  \'b0C</\cf11 p\cf5 >\cb1 \
+\cb3 \
 Old\
-\pard\pardeftab720\partightenfactor0
-
-\f3 \cf5 <\cf11 p\cf5 >\cf6 \{\cf7 props\cf6 .\cf5 data \cf6 ?\cf5  \cf7 props\cf6 .\cf5 data\cf6 .\cf5 weather_desc\cf6 .\cf8 toLowerCase\cf5 () \cf6 :\cf5  \cf9 ""\cf6 \}\cf5 </\cf11 p\cf5 >\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+<\cf11 p\cf5 >\cf6 \{\cf7 props\cf6 .\cf5 data \cf6 ?\cf5  \cf7 props\cf6 .\cf5 data\cf6 .\cf5 weather_desc\cf6 .\cf8 toLowerCase\cf5 () \cf6 :\cf5  \cf9 ""\cf6 \}\cf5 </\cf11 p\cf5 >\cb1 \
+\cb3 \
 \
 New\
-\pard\pardeftab720\partightenfactor0
-
-\f3 \cf5 <\cf11 p\cf5 >\cf6 \{\cf10 today\cf6 .\cf5 desc\cf6 .\cf8 toLowerCase\cf5 ()\cf6 \}\cf5 </\cf11 p\cf5 >\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+<\cf11 p\cf5 >\cf6 \{\cf10 today\cf6 .\cf5 desc\cf6 .\cf8 toLowerCase\cf5 ()\cf6 \}\cf5 </\cf11 p\cf5 >\cb1 \
+\cb3 \
 \
 Old\
-\pard\pardeftab720\partightenfactor0
-
-\f3 \cf5 <\cf11 img\cf5  \cb1 \
+<\cf11 img\cf5  \cb1 \
 \cb3                     \cf10 src\cf6 =\{\cf7 props\cf6 .\cf5 data \cf6 ?\cf5  \cf8 require\cf5 (\cf9 `../images/\cf10 $\{\cf7 props\cf6 .\cf5 data\cf6 .\cf5 icon\cf10 \}\cf9 .svg`\cf5 ) \cf6 :\cf5  \cf8 require\cf5 (\cf9 '../images/01d.svg'\cf5 )\cf6 \}\cf5 \cb1 \
 \cb3                     \cf10 alt\cf6 =\cf9 "sun"\cf5 \cb1 \
 \cb3                     \cf10 style\cf6 =\{\cf10 today\cf6 .\cf5 styles\cf6 \}\cf5 \cb1 \
 \cb3                 />\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+\cb3 \
 \
 New\
-\pard\pardeftab720\partightenfactor0
-
-\f3 \cf6 \{\cf4 /* Import a dynamic image based on the data of what weather comes back when the code calls the Weather API */\cf6 \}\cf5 \cb1 \
+\cf6 \{\cf4 /* Import a dynamic image based on the data of what weather comes back when the code calls the Weather API */\cf6 \}\cf5 \cb1 \
 \cb3                 <\cf11 img\cf5  \cb1 \
 \pard\pardeftab720\partightenfactor0
 \cf4 \cb3                     // Require is located here because the path needs to be dynamic\cf5 \cb1 \
@@ -424,27 +371,18 @@ New\
 \cb3                     \cf10 alt\cf6 =\cf9 "sun"\cf5 \cb1 \
 \cb3                     \cf10 style\cf6 =\{\cf10 today\cf6 .\cf5 styles\cf6 \}\cf5 \cb1 \
 \cb3                 />\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+\cb3 \
 Old\
 \pard\pardeftab720\partightenfactor0
-
-\f3 \cf4 <h1>\{props.date ? getDay(props.date) : ""\}</h1>\cf6 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf6 \
-New
-\f3 \cf5 \cb1 \
+\cf4 <h1>\{props.date ? getDay(props.date) : ""\}</h1>\cf6 \
+\
+New\cf5 \cb1 \
 \pard\pardeftab720\partightenfactor0
 \cf5 \cb3 <\cf11 h1\cf5 >\cf6 \{\cf7 props\cf6 .\cf5 day\cf6 .\cf5 date\cf6 \}\cf5 </\cf11 h1\cf5 >\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+\cb3 \
 \
 \pard\pardeftab720\partightenfactor0
-
-\f3 \cf4 // Set thisWeek\cf5 \cb1 \
+\cf4 // Set thisWeek\cf5 \cb1 \
 \pard\pardeftab720\partightenfactor0
 \cf6 \cb3             let\cf5  weekArray\cf6  =\cf5  [];\cb1 \
 \pard\pardeftab720\partightenfactor0
@@ -472,19 +410,13 @@ New\
 \cb3                 \cf6 :\cf5  \cf9 "Weather Box Loading..."\cf5 \cb1 \
 \cb3             \cf6 \}\cf5 \cb1 \
 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+\cb3 \
 Maps want keys\
 \
 \
 \
-\pard\pardeftab720\partightenfactor0
-
-\f3 \cf5  \cf8 setUrl\cf5 (\cf9 "https://api.openweathermap.org/data/2.5/forecast?q=New%20York&APPID=6557810176c36fac5f0db536711a6c52"\cf5 );\cb1 \
-\pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \cb3 \
+ \cf8 setUrl\cf5 (\cf9 "https://api.openweathermap.org/data/2.5/forecast?q=New%20York&APPID=6557810176c36fac5f0db536711a6c52"\cf5 );\cb1 \
+\cb3 \
 \
 \
 \
@@ -509,12 +441,10 @@ Callback functions\
 Event handling\
 \
 \ul To Study Ahead On\ulnone \
-React Router
-\f3 \cf5 \cb1 \
+React Router\cb1 \
+\
 \pard\pardeftab720\partightenfactor0
-
-\f1 \cf5 \
-\ul To Look Up\ulnone \
+\cf5 \ul To Look Up\ulnone \
 Refactor/rename shortcut\
 Immer, ImmerReducer (https://react.dev/learn/extracting-state-logic-into-a-reducer#consolidate-state-logic-with-a-reducer)\
 \
