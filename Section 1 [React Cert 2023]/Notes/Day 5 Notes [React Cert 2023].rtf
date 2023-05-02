@@ -1,10 +1,10 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2639
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Italic;
 }
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red20\green105\blue42;
-\red87\green87\blue87;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0\c0;\cssrgb\c6667\c47843\c21569;
-\cssrgb\c41569\c41569\c41569;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red83\green93\blue104;
+\red255\green255\blue255;\red13\green14\blue17;\red20\green105\blue42;\red87\green87\blue87;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0\c0;\cssrgb\c40000\c43922\c48235;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c5490\c6667\c8627;\cssrgb\c6667\c47843\c21569;\cssrgb\c41569\c41569\c41569;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
 \margl1440\margr1440\vieww8700\viewh17260\viewkind0
@@ -36,12 +36,33 @@ Input can be more than one word, check for spaces\
 Extra credit: correct capitalization & punctuation\
 \
 \
+RegEx: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions\
+\
+\
+Problem solving pattern:\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4  To check if something is capitalized, you can make a copy, run a capitalize function, & if comparing the original to the value after the operation you find they are the same, then you know it was already capitalized\cf6 \cb1 \strokec6 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+second value is exclusive, so can call str.slice(0, -1);\
+ommitting second arg goes to the end of str\
+\
+.slice(-1)\
+\
+Fizzbuzz algo\
+For order, prioritizing conditionals\
+Switch, case, break\
+\
+If you are given a coding exercise, complete it, then add additional functionality for extra credit\
+\
 \ul spotify-player\ulnone \
 \pard\pardeftab720\partightenfactor0
 \cf2 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \strokec2 https://developer.spotify.com/documentation/web-api/concepts/authorization:\
 \'93Authorization refers to the process of granting a user or application access permissions to Spotify data and features (e.g your application needs permission from a user to access their playlists).\
-Spotify implements the\'a0{\field{\*\fldinst{HYPERLINK "https://datatracker.ietf.org/doc/html/rfc6749"}}{\fldrslt \ul \strokec4 OAuth 2.0}}\'a0authorization framework:\
+Spotify implements the\'a0{\field{\*\fldinst{HYPERLINK "https://datatracker.ietf.org/doc/html/rfc6749"}}{\fldrslt \ul \strokec7 OAuth 2.0}}\'a0authorization framework:\
 End User <->  My App \outl0\strokewidth0 <-> Spotify API\outl0\strokewidth0 \strokec2 \
 \
 \pard\pardeftab720\partightenfactor0
@@ -65,16 +86,16 @@ End User <->  My App \outl0\strokewidth0 <-> Spotify API\outl0\strokewidth0 \str
 \cf2 \
 \
 \ul Spotify App via Spotify Dashboard\ulnone \
-Name (\'93\strokec5 Please make sure the name doesn't start with "Spot"\strokec2 \'93):\
+Name (\'93\strokec8 Please make sure the name doesn't start with "Spot"\strokec2 \'93):\
 Description: An app to learn & experiment with the Spotify Web API & Web Playback SDK. Will display & play songs based on user inputs which will determine which API calls are made.\
 Website:\
-Redirect URI (\strokec5 A URI where users can be redirected after authentication success or failure):\strokec2 \
+Redirect URI (\strokec8 A URI where users can be redirected after authentication success or failure):\strokec2 \
 \
 \
 \
 \
 \
-\
+https://rhymebrain.com/api.html\
 \
 \
 \

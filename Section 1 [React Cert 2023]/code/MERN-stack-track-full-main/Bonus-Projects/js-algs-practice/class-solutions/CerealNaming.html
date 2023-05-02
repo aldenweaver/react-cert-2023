@@ -1,0 +1,52 @@
+<!-- CerealNaming Solution Code From Class -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creepy Cereals</title>
+</head>
+<body>
+​
+    <h1>Creepy Cereals</h1>
+​
+    <script>
+​
+        scary_cereals = ['Cap\'n Creep', 'Quaking Oats', 'Tales of the Crisp', 'Boo Berry', 'Frightful Flakes'];
+        monster_cereals = ['Apple Dracs', 'Yummy Mummy', 'Count Chocula', 'Frute Brute', 'Franken Berry'];
+        psycho_cereals = ['Chucky Harms', 'Fruity Krueger', 'Sugar Chops', 'Machete Mateys', 'Scary Strawberry Crunch', 'Scream of Wheat'];
+​
+        function processCereals(cerealsArr) {
+            console.log('cereal stuff');
+            // loop the cereal name, one word at a time
+            for(let i = 0; i < cerealsArr.length; i++) {
+                let cerealName = cerealsArr[i];
+                let cerealNameWords = cerealName.split(' '); // ['Boo', 'Berry']
+                let firstWord = cerealNameWords[0];
+                let lastWord = cerealNameWords[cerealNameWords.length-1];
+                if (cerealName.includes('Berry') || cerealName.includes('berry')) {
+                    console.log(`${cerealName} - How Berry Scary!`);
+                } else if(firstWord[0] == 'C' && lastWord[0] == 'C') {
+                    console.log(`${cerealName} - CC is Double Creppy!`);
+                } else if (firstWord[0] == 'C' || lastWord[0] == 'C') {
+                    console.log(`${cerealName} - C is for Creppy!`);
+                // rhyming, here, is defined as last 3 chars match
+                } else if (firstWord.slice(-3) == lastWord.slice(-3)) {
+                    console.log(`${cerealName} - It's a Very Scary Time to be makin' a Rhyme!`);
+                } else if (firstWord[0] == lastWord[0]) { // 
+                    console.log(`${cerealName} - Alarming Alliteration!`);
+                } else { // none of the above apply
+                    console.log(cerealName);
+                }
+            }
+        }
+​
+        console.log(processCereals(scary_cereals));
+        console.log(processCereals(monster_cereals));
+        console.log(processCereals(psycho_cereals));
+​
+    </script>
+    
+</body>
+</html>

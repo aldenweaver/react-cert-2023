@@ -1,0 +1,93 @@
+<!-- Pig Latin Solution Code From Class -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Latin</title>
+</head>
+<body>
+​
+    <h1>Pig Latin</h1>
+​
+    <script>
+​
+        // Pig Latin Translator
+        function pigLatinize(words) {
+​
+            let regex = /[,.<>;!@'"?$*^#\\\/]/g;
+            // assume in the string, that all punctuation is the last char of a given word
+            let puncArr = [',', ';', ':', '.', '?', '!', '"', '\''];
+            let wordsArr = words.split(" ");
+            // console.log(wordsArr);
+            // words = words.replace(regex, "").split(" ");
+​
+            let vowels = ["a", "e", "i", "o", "u"];
+            let pigFinal = "";
+            let isCap = false;
+            
+            for (let i = 0; i < wordsArr.length; i++) {
+                let punc = ''; // for storing punctuaion mark, if any, at end of word
+                let pigWord = ''; // store the translated pig latin word
+                let engWord = wordsArr[i]; // the current eng word
+                isCap = false;
+                // console.log("engWord:", engWord);
+                // check if word is capitalized
+                // if capitalizing word (uppercasing first char) does NOT result in a change to the word,
+                // then the word was already capitalized
+                if(engWord[0].toUpperCase() == engWord[0]) {
+                    // console.log("engWord.slice(1):", engWord.slice(1));
+                    // since word is capitalized, note that fact in a boolean
+                    isCap = true;
+                    // console.log('isCap:', isCap);
+                }
+                engWord = engWord.toLowerCase();
+                
+                // console.log('engWord:', engWord[0].toUpperCase());
+                // check if engWord ends in a punctuation mark
+                // if replacing punc w nothing makes no change, 
+                // then there was no punc to begin with; ergo: if replacing punc
+                // w nothing DOES change engWord, then engWord DOES have punc
+                // if (engWord.replace(regex, "") != engWord) {
+                if (puncArr.includes(engWord.slice(-1))) {
+                    // since there is punc, slice off the last char and save it to punc
+                    punc = engWord.slice(-1); // omit 2nd arg, and it goes to the end
+                    engWord = engWord.slice(0,-1); // -1 (last char) is exclusive
+                }
+                // check if first letter of english word is a vowel
+                if (vowels.includes(engWord[0])) {
+                    // word starts w vowel, so just add 'yay'
+                    pigWord = engWord[0] + "yay";
+                } else { // eng word does NOT start w vowel (starts w consonant)
+                    // loop eng word, char by char, looking for the first vowel
+                    for (let j = 0; j < engWord.length; j++) {
+                        // if current char of eng word is a vowel:
+                        if(vowels.includes(engWord[j])) {
+                            // slice off leading consonant(s), move to end, add "ay"
+                            pigWord = engWord.slice(j) + engWord.slice(0, j) + "ay";
+                            break;
+                        }
+                    }
+                }
+                // re-capitalize word, if necessary, based on isCap boolean
+                if(isCap == true) {
+                    pigWord = pigWord.slice(0,1).toUpperCase() + pigWord.slice(1);
+                    console.log("Capitalized:", pigWord);
+                } 
+                pigFinal += pigWord + punc + " "; // add the translated word to the final string
+            }
+            return pigFinal.slice(0,-1); // lose the last space of the last word
+        }
+        
+        console.log(pigLatinize("Can you help Jon or not?")) // Ancay ouyay elphay emay
+        console.log(pigLatinize("When is lunch?")) // Enwhay isyay unchlay?
+        console.log(pigLatinize("John, I think it was, said to Mary: How you you say \Nice to meet you!\ in Pig Latin?")) 
+        // Enwhay isyay unchlay?
+        console.log(pigLatinize("Easily submit issues by adding them manually, importing bugs from other issue tracking software, or exporting them via spreadsheets."))
+​
+    </script>
+    
+</body>
+</html>
