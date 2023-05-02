@@ -4,11 +4,13 @@
 {\colortbl;\red255\green255\blue255;\red13\green14\blue17;\red83\green93\blue104;\red255\green255\blue255;
 \red5\green40\blue131;\red5\green25\blue80;\red141\green0\blue24;\red78\green16\blue174;\red92\green32\blue1;
 \red9\green61\blue20;\red22\green21\blue22;\red22\green21\blue22;\red0\green0\blue0;\red0\green0\blue0;
-\red250\green195\blue196;\red223\green35\blue55;\red250\green195\blue196;}
+\red250\green195\blue196;\red223\green35\blue55;\red250\green195\blue196;\red141\green0\blue24;\red13\green14\blue17;
+\red5\green40\blue131;\red78\green16\blue174;}
 {\*\expandedcolortbl;;\cssrgb\c5490\c6667\c8627;\cssrgb\c40000\c43922\c48235;\cssrgb\c100000\c100000\c100000;
 \cssrgb\c784\c23137\c58431;\cssrgb\c1176\c14510\c38824;\cssrgb\c62745\c6667\c12157;\cssrgb\c38431\c17255\c73725;\cssrgb\c43922\c17255\c0;
 \cssrgb\c784\c29804\c10196;\cssrgb\c11373\c10980\c11373;\cssrgb\c11373\c10980\c11373\c3922;\cssrgb\c0\c0\c0;\csgray\c0\c0;
-\cssrgb\c98824\c81176\c81176;\cssrgb\c90980\c23137\c27451;\cssrgb\c98824\c81176\c81176;}
+\cssrgb\c98824\c81176\c81176;\cssrgb\c90980\c23137\c27451;\cssrgb\c98824\c81176\c81176;\cssrgb\c62745\c6667\c12157;\cssrgb\c5490\c6667\c8627;
+\cssrgb\c784\c23137\c58431;\cssrgb\c38431\c17255\c73725;}
 \margl1440\margr1440\vieww10060\viewh15280\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 
@@ -206,6 +208,8 @@ Conditional rendering\
 Next.js\
 \
 https://developer.spotify.com/\
+https://developer.spotify.com/documentation/web-api/howtos/web-app-profile\
+https://developer.spotify.com/documentation/web-api/concepts/apps\
 \
 https://react.dev/learn/sharing-state-between-components\
 \
@@ -219,10 +223,36 @@ https://react.dev/reference/react/Component#catching-rendering-errors-with-an-er
 \
 Reacting to input with state: https://react.dev/learn/managing-state#reacting-to-input-with-state\
 \
+State structuring: https://react.dev/learn/choosing-the-state-structure\
+\
+\
+\'93\'94\
+-https://www.geeksforgeeks.org/how-to-solve-too-many-re-renders-error-in-reactjs/\
+\
+\
+\
+TypeError: Cannot read properties of null (reading 'url')\
+Problem: \cf18 \cb4 \outl0\strokewidth0 \strokec18 const\cf19 \strokec19  [\cf20 \strokec20 apiProps\cf19 \strokec19 , \cf21 \strokec21 setApiProps\cf19 \strokec19 ]\cf18 \strokec18  =\cf19 \strokec19  \cf21 \strokec21 useState\cf19 \strokec19 (null);\cb1 \
+\cf2 \outl0\strokewidth0 Solution: \cf18 \cb4 \outl0\strokewidth0 \strokec18 const\cf19 \strokec19  [\cf20 \strokec20 apiProps\cf19 \strokec19 , \cf21 \strokec21 setApiProps\cf19 \strokec19 ]\cf18 \strokec18  =\cf19 \strokec19  \cf21 \strokec21 useState\cf19 \strokec19 (\{\});\cb1 \
+\cf2 \outl0\strokewidth0 \
+ \
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf13 \cb14 \outl0\strokewidth0 \strokec17 fetchWebApi(...).then is not a function\
+Does .then only work on built-in JS fetch?\
+Answer: .then only works on promises, & the built-in fetch is a promise\
+\
+https://react.dev/learn/synchronizing-with-effects#what-are-good-alternatives-to-data-fetching-in-effects\
+https://www.robinwieruch.de/react-hooks-fetch-data/
+\fs30 \cf2 \cb1 \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
 \
 \ul Questions\ulnone \
 Can you call custom hooks inside component helper functions?\
 I don\'92t think so, because you store the results of hooks in const state variables at the top of the functional component function structure, so the scope wouldn\'92t work? Unless you do useState?\
+\
+functions within useEffect? That rely on the last parameter of useEffect? [vars]\
 \
 \
 \ul Coming Up: React Router\ulnone \
@@ -232,7 +262,6 @@ All components you write can be available when the page loads\
 \
 \
 \ul Stack Overflow Answer Draft\ulnone \
-\
 I also encountered this error, using React v18.\
 Mine happened not on a button as per the original question, but on an input field.\
 \
@@ -255,8 +284,31 @@ The following code would go inside a custom functional component:\
     // Custom functional component return statement\
     return ( \
         <>\
+            \{/* Doesn't Solve Error */\}\
             <input value=\{input\} onChange=\{(e) => handleInputChange(e)\}/>\
+\
+            \{/* Doesn't Solve Error */\}\
+            <input value=\{input\} onChange=\{() => handleInputChange\}/>\
+    \
+            \{/* Doesn't Solve Error */\}\
+            <input value=\{input\} onChange=\{handleInputChange\}/>\
         </>\
     );\
+\
+\
+\
+FunctionalComponent.js:\
+    \
+    function FunctionalComponent() \{\
+        const [data, isLoading, setProperty] = useAsyncAuthFetch();\
+    \}\
+\
+Custom Fetch Hook file:\
+\
+    // Used to locally manipulate the props passed down\
+    const [apiProps, setApiProps] = useState(null);\
+\
+I was calling the hook in the functional component, but when I called the setApiProps (that is attached to the custom fetch hook), it was inside the functional component but outside any functions within the functional component. Moving it inside the handleSubmit() function fixed the error. It might be that the call to setApiProps needs to be in a function within the functional component instead of just inside the functional component.\
+\
 \
 Also, @Chris has a really good explanation. Here is an updated link for the link he referenced about JSX & expressions: https://react.dev/learn/conditional-rendering#conditionally-assigning-jsx-to-a-variable}

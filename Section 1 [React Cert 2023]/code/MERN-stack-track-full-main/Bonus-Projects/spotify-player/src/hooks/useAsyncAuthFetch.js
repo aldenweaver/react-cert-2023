@@ -9,35 +9,39 @@ function useAsyncAuthFetch() {
     const [isLoading, setIsLoading] = useState(false);
 
     // Used to locally manipulate the props passed down
-    const [apiProps, setApiProps] = useState(null);
+    const [apiProps, setApiProps] = useState({});
 
     // Fetch data from the given url
     useEffect(() => {
       setIsLoading(true);
 
+      // Currently hard-coded for GET because GET does not have a body & will throw an error when passed an empty body
+      // TODO: refactor so it will check if POST, GET, etc
+      // This functionality must live within useEffect() because it relies on apiProps (TODO: can it be refactored?)
       {/* Modified from Spotify Developer site */}
-      async function fetchWebApi() {
-        const res = await fetch(`${apiProps.url}/${apiProps.endpoint}`, {
+      function fetchWebApi() {
+        fetch(`${apiProps.url}/${apiProps.endpoint}`, {
             headers: {
             Authorization: `Bearer ${apiProps.token}`,
             },
-            method: apiProps.method,
-            body:JSON.stringify(apiProps.body)
-        });
+            method: `${apiProps.method}`
+        })
+          .then((response) => {JSON.stringify(response)})
+          .then((data) => {
+            setData(data);
 
-        return await res.json();
+            // Turn off loading flag once data comes back
+            setIsLoading(false);
+          });
+
+        return data;
       }
       {/* End Modified from Spotify Dev code */}
 
-      fetchWebApi()
-          .then((response) => response.json())
-          .then((data) => {
-              setData(data);
+      // Do the work to call the API & set the data
+      fetchWebApi();
 
-              // Turn off loading flag once data comes back
-              setIsLoading(false);
-      });
-    }, [apiProps]);   
+    }, [data, setIsLoading, apiProps]);   
 
     // Return data state variable
     return [data, isLoading, setApiProps];

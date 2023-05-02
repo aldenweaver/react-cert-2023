@@ -29,3 +29,13 @@
     data.map(({name, artists}) => `${name} by ${artists.map(artist => artist.name).join(', ')}`) 
     : "Loading data from Spotify API..."} */}
 {/* End Modified from Spotify Dev code */}
+
+
+fetchWebApi()
+          .then((res) => res.json())
+          .then((data) => {
+              setData(data);
+
+              // Turn off loading flag once data comes back
+              setIsLoading(false);
+      }
