@@ -1,0 +1,90 @@
+body {
+    background-color: #555;
+    margin: 20px;
+    color: #555;
+    font-family: sans-serif;
+}
+
+#container {
+    min-width: 1150px;
+    width: 90%;
+    min-height: 800px;
+    height: 85vh;
+    background-color: #ddf;
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+    border: 4px solid #aaa;
+}
+
+h1 {
+    color: cornflowerblue;
+}
+
+#chart {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    background-color: #fff;
+    border-left: 3px solid #555;
+    border-bottom: 3px solid #555;
+    margin: 0 auto;
+    /* grid lines */
+    background: repeating-linear-gradient(white 0px, white 30px, gray 30px 32px);
+}
+
+.bars {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.bar {
+    width: 43px;
+    padding: 10px;
+    margin: 14px;
+    background-color: cornflowerblue;
+}
+
+.labels {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* background-color: coral; */
+    color: #fff;
+    font-weight: bold;
+    min-height: 40px;
+    color: #555;
+}
+
+.label {
+    padding: 10px;
+    margin: 10px;
+}
+
+.y-axis {
+    position: absolute;
+    left: 0px;
+    width: 90px;
+    background-color: cornflowerblue;
+    height: 100%;
+    font-size: 1.15rem;
+    color: white;
+    font-weight: normal;
+}
+
+.pay {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

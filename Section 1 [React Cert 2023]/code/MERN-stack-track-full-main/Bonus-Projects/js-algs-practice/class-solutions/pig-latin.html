@@ -1,5 +1,3 @@
-<!-- Pig Latin Solution Code From Class -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,30 +7,33 @@
     <title>Pig Latin</title>
 </head>
 <body>
-​
+
     <h1>Pig Latin</h1>
-​
+
     <script>
-​
+
         // Pig Latin Translator
         function pigLatinize(words) {
-​
+            words = words.replace('-', ' ');
             let regex = /[,.<>;!@'"?$*^#\\\/]/g;
             // assume in the string, that all punctuation is the last char of a given word
             let puncArr = [',', ';', ':', '.', '?', '!', '"', '\''];
             let wordsArr = words.split(" ");
             // console.log(wordsArr);
             // words = words.replace(regex, "").split(" ");
-​
+
             let vowels = ["a", "e", "i", "o", "u"];
             let pigFinal = "";
             let isCap = false;
+            // let isQuote = false;
             
             for (let i = 0; i < wordsArr.length; i++) {
                 let punc = ''; // for storing punctuaion mark, if any, at end of word
+                
                 let pigWord = ''; // store the translated pig latin word
                 let engWord = wordsArr[i]; // the current eng word
                 isCap = false;
+                // isQuote = false;
                 // console.log("engWord:", engWord);
                 // check if word is capitalized
                 // if capitalizing word (uppercasing first char) does NOT result in a change to the word,
@@ -56,6 +57,12 @@
                     punc = engWord.slice(-1); // omit 2nd arg, and it goes to the end
                     engWord = engWord.slice(0,-1); // -1 (last char) is exclusive
                 }
+                // does word start w quote -- so is punc the first char
+                // if(engWord[0] == '"' || engWord[0] == "'") {
+                //     punc = engWord[0]; // omit 2nd arg, and it goes to the end
+                //     engWord = engWord.slice(1); // -1 (last char) is exclusive
+                //     isQuote = true;
+                // }
                 // check if first letter of english word is a vowel
                 if (vowels.includes(engWord[0])) {
                     // word starts w vowel, so just add 'yay'
@@ -76,6 +83,9 @@
                     pigWord = pigWord.slice(0,1).toUpperCase() + pigWord.slice(1);
                     console.log("Capitalized:", pigWord);
                 } 
+                // if(isQuote == true) {
+                //     pigFinal += punc + pigWord + " "; // add the translated word to the final string
+                // }
                 pigFinal += pigWord + punc + " "; // add the translated word to the final string
             }
             return pigFinal.slice(0,-1); // lose the last space of the last word
@@ -83,10 +93,11 @@
         
         console.log(pigLatinize("Can you help Jon or not?")) // Ancay ouyay elphay emay
         console.log(pigLatinize("When is lunch?")) // Enwhay isyay unchlay?
-        console.log(pigLatinize("John, I think it was, said to Mary: How you you say \Nice to meet you!\ in Pig Latin?")) 
+        console.log(pigLatinize("John, I think it was, said to Mary: How you you say Nice to meet you! in Pig Latin?")) 
         // Enwhay isyay unchlay?
         console.log(pigLatinize("Easily submit issues by adding them manually, importing bugs from other issue tracking software, or exporting them via spreadsheets."))
-​
+        console.log(pigLatinize("Pig Latin is a fast-paced, fun-filled, action-packed word game"))
+
     </script>
     
 </body>

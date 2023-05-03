@@ -10,7 +10,7 @@
 
     <div id="container">
         <h1>JS Animated Bar Chart</h1>
-        <h2>Acme Inc. Employees</h2>
+        <h2>Acme Inc. Employee Salaries</h2>
         <div id="chart"></div>
     </div>
 
@@ -36,26 +36,36 @@
         chart.appendChild(labels);
         let barInterval;
 
+        const yAxisLabels = document.createElement('div');
+        yAxisLabels.className = 'y-axis';
+        chart.appendChild(yAxisLabels);
+
         for (let i = 0; i < emps.length; i++) {
 
             let bar = document.createElement("div");
             bar.className = "bar";
             let barFullHt = Math.round(emps[i].pay / 170);
-            let htFactor = 5;
+            let htFactor = 10;
             bars.appendChild(bar);
             barInterval = setInterval(() => {
-                htFactor *= 1.1;
+                htFactor *= 1.02;
                 if(htFactor <= barFullHt) {
                     bar.style.height = htFactor + 'px';
                 } else { // done growing the bar
                     clearInterval(barInterval);
                 }
-            }, 25);
+            }, 20);
             let label = document.createElement("span");
             label.className = "label";
             label.textContent = emps[i].name;
             labels.appendChild(label);
         }
+
+        // add emp name to the y-axis:
+        for(let i = 100000; i >= 0; i-=10000) {
+            yAxisLabels.innerHTML += `<p class="pay">$${(i).toLocaleString()}</p>`;
+        }
+            
 
 
        //    VANILLA JS CHALLENGE: NO LIBRARIES ALLOWED
