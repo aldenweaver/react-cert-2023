@@ -8,7 +8,7 @@ function PigLatin() {
         for(let i = 0; i < vowels.length; i++) {
             // console.log("checkForVowels iteration; firstChar: " + firstChar);
             if(vowels.includes(firstChar)) {
-                console.log("checkForVowels returns true");
+                // console.log("checkForVowels returns true");
                 return true;
             }
         }
@@ -54,7 +54,7 @@ function PigLatin() {
     // Notes: Doesn't currently handle hyphenated words (can handle multiple hyphens in one word by splitting into array based on "-", translate/format each word in array, then re-hyphenate translated words)
     function findPunctuation(inputStr) {
         // RegEx
-        let regex = /[,.<>;:!@'"?$*^#\\\/]/g;
+        let regex = /[,.<>;:!@'"?$*^#\\/]/g;
 
         // Stores punctuation in string (if any)
         let punc = "";
@@ -182,8 +182,13 @@ function PigLatin() {
 
     return ( 
         <>
-            <p>{setPigLatin("This is an example String")}</p>
-            <p>{setPigLatin("John, I think it was, said to Mary: How do you say Nice to meet you! in Pig Latin?")}</p>
+            <h2>Pig Latin</h2>
+
+            <p>Test Input: "This is an example String"</p>
+            <p>Output: {setPigLatin("This is an example String")}</p>
+
+            <p>Test Input: "John, I think it was, said to Mary: How do you say Nice to meet you! in Pig Latin?"</p>
+            <p>Output: {setPigLatin("John, I think it was, said to Mary: How do you say Nice to meet you! in Pig Latin?")}</p>
         </>
      );
 }

@@ -98,9 +98,15 @@ function CerealNaming() {
 
     return ( 
         <>
-            <p>{setCerealList(scary_cereals)}</p>
-            <p>{setCerealList(monster_cereals)}</p>
-            <p>{setCerealList(psycho_cereals)}</p>
+            <h2>Cereal Naming</h2>
+            <p>Test Input: ['Cap\'n Creep', 'Quaking Oats', 'Tales of the Crisp', 'Boo Berry', 'Frightful Flakes', 'Strawberry Screams']</p>
+            <p>Output: {setCerealList(scary_cereals)}</p>
+
+            <p>Test Input: ['Cap\'n Creep', 'Quaking Oats', 'Tales of the Crisp', 'Boo Berry', 'Frightful Flakes', 'Strawberry Screams']</p>
+            <p>Output: {setCerealList(monster_cereals)}</p>
+
+            <p>Test Input: ['Cap\'n Creep', 'Quaking Oats', 'Tales of the Crisp', 'Boo Berry', 'Frightful Flakes', 'Strawberry Screams']</p>
+            <p>Output: {setCerealList(psycho_cereals)}</p>
         </>
      );
 }

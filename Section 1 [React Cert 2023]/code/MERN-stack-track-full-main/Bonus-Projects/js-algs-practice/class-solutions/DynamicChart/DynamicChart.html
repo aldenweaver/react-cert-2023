@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Animated Bar Chart</title>
+    <link rel="stylesheet" href="css/animated-bar-chart.css">
+</head>
+<body>
+
+    <div id="container">
+        <h1>JS Animated Bar Chart</h1>
+        <h2>Acme Inc. Employees</h2>
+        <div id="chart"></div>
+    </div>
+
+    <script>
+
+       const emps = [
+        {name: "Amy", pay: 45600, yrs: 5},
+        {name: "Bob", pay: 67600, yrs: 8},
+        {name: "Cal", pay: 38600, yrs: 3},
+        {name: "Dan", pay: 88500, yrs: 5},
+        {name: "Eda", pay: 78600, yrs: 7},
+        {name: "Fay", pay: 58600, yrs: 4}
+       ];
+
+       const chart = document.getElementById("chart");
+
+        const bars = document.createElement("div");
+        bars.className = "bars";
+        chart.appendChild(bars);
+
+        const labels = document.createElement("div");
+        labels.className = "labels";
+        chart.appendChild(labels);
+        let barInterval;
+
+        for (let i = 0; i < emps.length; i++) {
+
+            let bar = document.createElement("div");
+            bar.className = "bar";
+            let barFullHt = Math.round(emps[i].pay / 170);
+            let htFactor = 5;
+            bars.appendChild(bar);
+            barInterval = setInterval(() => {
+                htFactor *= 1.1;
+                if(htFactor <= barFullHt) {
+                    bar.style.height = htFactor + 'px';
+                } else { // done growing the bar
+                    clearInterval(barInterval);
+                }
+            }, 25);
+            let label = document.createElement("span");
+            label.className = "label";
+            label.textContent = emps[i].name;
+            labels.appendChild(label);
+        }
+
+
+       //    VANILLA JS CHALLENGE: NO LIBRARIES ALLOWED
+       //    YOU MAY -- OPTIONALLY -- MAKE ALL THE HTML DYNAMICALLY IN JS
+       //    OR, IF YOU PREFER, JUST MAKE SOME TAGS IN THE HTML DIRECTLY
+       //    SAME GOES FOR THE CSS -- DO AS MUCH OR AS LITTLE IN THE JS
+       //    AS YOU WISH; SOME, MOST OR ALL CSS CAN GO IN A .CSS FILE
+
+       //    CHARTING DATA
+       // 1. Using the emps array of objects, make a column chart w:
+       //    - vertical bars (columns) show how much pay each employee gets
+       //    - y-axis has dollar values from 0-100000
+       //    - x-axis has names under each column
+       //    HINT: createElement() and appendChild() are for making HTML elems dynamically w JS
+       //    HINT: a div w border on just 2 of the 4 sides, namely the left and bottom, looks
+       //          just like the x-y axes of a chart
+    
+       //    ANIMATION
+       // 2. Kicking it up a notch, make the bars animate -- grow in height
+       //    on page load -- such that it takes X seconds to reach full ht
+       //    HINT: setInterval()
+
+        //    INTERACTIVITY: ADD EMPLOYEE
+        // 3. Kicking it up another notch, give the user the ability to add 
+        //    a new employee. The added user automatically appears in the
+        //    chart, which re-animates
+        //    HINT: Use form elements, if not an actual form: <input> <button>
+
+        //    INTERACTIVITY: FILTER DATA
+        // 4. Kicking it up yet another notch, give the user a menu to choose
+        //    from, so that they can view the employees by salary (pay), by 
+        //    years or by BOTH; if user chooses BOTH, plot BOTH bars side-by-side
+        //    Every time the user chooses from the menu, the bars must re-animate
+        //    HINT: <select> <options> Salary, Years, Pay & Yrs
+
+    </script>
+    
+</body>
+</html>
