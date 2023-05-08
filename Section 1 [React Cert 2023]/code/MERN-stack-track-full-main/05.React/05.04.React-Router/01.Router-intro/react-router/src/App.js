@@ -25,11 +25,11 @@ function App() {
         </ul>
       </nav>
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/games" element={<GameList/>} />
-          <Route path="/games/:id" element={<Game />} />
-          <Route path="/games/new" element={<NewGame />} />
-
+          <Route path="/" element={<Home />} />
+          <Route path="/games" element={<GameList />}>
+              <Route path=":id" element={<Game />} />
+              <Route path="new" element={<NewGame />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
     </div>
