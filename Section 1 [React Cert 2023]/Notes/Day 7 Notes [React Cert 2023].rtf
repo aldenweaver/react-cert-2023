@@ -1,17 +1,19 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2639
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 HelveticaNeue;
-\f3\fnil\fcharset0 Monaco;}
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Italic;
+}
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red141\green0\blue24;\red13\green14\blue17;
 \red5\green25\blue80;\red5\green40\blue131;\red78\green16\blue174;\red9\green61\blue20;\red70\green137\blue204;
 \red212\green212\blue212;\red203\green139\blue114;\red13\green14\blue17;\red5\green25\blue80;\red137\green137\blue137;
-\red140\green211\blue254;\red255\green255\blue255;\red0\green0\blue0;\red83\green93\blue104;}
+\red140\green211\blue254;\red255\green255\blue255;\red0\green0\blue0;\red83\green93\blue104;\red26\green25\blue36;
+\red92\green32\blue1;\red17\green106\blue147;\red26\green29\blue35;}
 {\*\expandedcolortbl;;\csgray\c0\c0;\cssrgb\c62745\c6667\c12157;\cssrgb\c5490\c6667\c8627;
 \cssrgb\c1176\c14510\c38824;\cssrgb\c784\c23137\c58431;\cssrgb\c38431\c17255\c73725;\cssrgb\c784\c29804\c10196;\cssrgb\c33725\c61176\c83922;
 \cssrgb\c86275\c86275\c86275;\cssrgb\c83922\c61569\c52157;\cssrgb\c5490\c6667\c8627;\cssrgb\c1176\c14510\c38824;\cssrgb\c60784\c60784\c60784;
-\cssrgb\c61176\c86275\c99608;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c40000\c43922\c48235;}
+\cssrgb\c61176\c86275\c99608;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c40000\c43922\c48235;\cssrgb\c13333\c13333\c18824;
+\cssrgb\c43922\c17255\c0;\cssrgb\c3137\c49412\c64314;\cssrgb\c13725\c15294\c18431;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid2\'01\'01;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
-\margl1440\margr1440\vieww12820\viewh15400\viewkind0
+\margl1440\margr1440\vieww11640\viewh15400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 
 \f0\b\fs30 \cf0 \cb2 Day 7 Notes [React Cert 2023]
@@ -59,14 +61,12 @@ From class README:\
 \pard\tx940\tx1440\pardeftab720\li1440\fi-1440\partightenfactor0
 \ls1\ilvl1\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \strokec4 Handle navigation\
-\ls1\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 \
 \pard\tx720\tx1440\pardeftab720\partightenfactor0
 \cf4 \
 \pard\pardeftab720\partightenfactor0
 \cf4 \strokec4 OPTIONAL - You might also see in other applications that use React Router, on the\'a0index.js\'a0they are not wrapping the\'a0App\'a0component in the\'a0BrowserRouter\'a0component. This can happen, but on\'a0App.js\'a0this is an example of how it would be imported:\
 \pard\pardeftab720\partightenfactor0
-\cf9 \strokec9 import\cf4 \strokec4  \{ \cf10 \strokec10 BrowserRouter\cf4 \strokec4  \cf9 \strokec9 as\cf4 \strokec4  \cf10 \strokec10 Router\cf4 \strokec4 , \cf10 \strokec10 Switch\cf4 \strokec4 , \cf10 \strokec10 Route\cf4 \strokec4  \} \cf9 \strokec9 from\cf4 \strokec4  \cf11 \strokec11 'react-router-dom'\cf4 \strokec4 ;\
+\cf9 \strokec9 	import\cf4 \strokec4  \{ \cf10 \strokec10 BrowserRouter\cf4 \strokec4  \cf9 \strokec9 as\cf4 \strokec4  \cf10 \strokec10 Router\cf4 \strokec4 , \cf10 \strokec10 Switch\cf4 \strokec4 , \cf10 \strokec10 Route\cf4 \strokec4  \} \cf9 \strokec9 from\cf4 \strokec4  \cf11 \strokec11 'react-router-dom'\cf4 \strokec4 ;\
 Then if you render everything in a wrapped\'a0<Router></Router>\'a0component, this will produce the same effect. Both methods work fine, and it is up to you how you want to apply it. For the rest of this lesson however, we would be going with the first method shown where\'a0BrowserRouter\'a0wraps the\'a0App\'a0component on\'a0index.js\'94\
 \
 Everything on inside of Routes tag is Route definitions for URL paths\
@@ -112,16 +112,22 @@ Useful for user pages/profiles url.com/user/username\
 \
 \
 *Can you have a custom component to handle all Routing code & import that into App, or must work be done at App.js level?\
-\
+See Nested Routes\
 \
 \pard\pardeftab720\partightenfactor0
 \cf4 \ul \ulc4 \strokec4 Handling User Input\cf4 \ulnone \strokec4 \
 <\cf8 \strokec8 Route\cf4 \strokec4  \cf6 \strokec6 path\cf3 \strokec3 =\cf5 \strokec5 "/games/new"\cf4 \strokec4  \cf6 \strokec6 element\cf3 \strokec3 =\{\cf4 \strokec4 <\cf8 \strokec8 NewGame\cf4 \strokec4  />\cf3 \strokec3 \}\cf4 \strokec4  />\
 \pard\pardeftab720\partightenfactor0
 \cf12 \outl0\strokewidth0 define the specific parameter \'93new\'94; otherwise if the app sees \cf13 "/games/new"\cf12   in the URL, it\cf4 \outl0\strokewidth0 \strokec4  will think there is a dynamic parameter with input of \'93new\'94\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 Link Element\ulnone \
 If you want to display this route on the UI instead of accessing it via a URL, you need a <Link/> element\
 \pard\pardeftab720\partightenfactor0
 \cf4 <\cf8 \strokec8 Link\cf4 \strokec4  \cf6 \strokec6 to\cf3 \strokec3 =\cf5 \strokec5 "/games/new"\cf4 \strokec4 >New Game</\cf8 \strokec8 Link\cf4 \strokec4 >\
+\
+Link elements with nothing in between them will not show any text on the UI to click on\
 \pard\pardeftab720\partightenfactor0
 \cf4 \
 Order no longer matters when listing Route definitions (it used to, but now it is smarter)\
@@ -155,66 +161,89 @@ Useful for shared layouts\
 \
 \cf4 \ul \ulc4 \strokec4 Shared Layouts & Outlets\cf4 \ulnone \strokec4 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \cb2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
-If you want something at the base level, write path instead of index\
-If you want it instead\
+\cf0 \cb2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 If you want something at the base level, write path instead of index (? review)\
 \
 From class README:\cf4 \cb1 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \strokec4 \
 \pard\pardeftab720\partightenfactor0
 \cf4 \strokec4 Problem: \'93to render a nav section with links to each game as well the new game form from any of our game pages [\'85] normally we would need to make a shared component to store this navigation and then import that into every single game related component.\'94\
 Solution: \'93If you pass an\'a0element\'a0prop to a parent route it will render that component for every single child\'a0Route\'a0which means you can put a shared nav or other shared components on every child page with ease.\'94\
-\'93
-\f2\fs28 \cf4 \strokec4 whenever we match a route inside the\'a0
-\f3 \cf4 \strokec4 /game
-\f2 \cf4 \strokec4 \'a0parent\'a0
-\f3 \cf4 \strokec4 Route
-\f2 \cf4 \strokec4 \'a0it will render the\'a0
-\f3 \cf4 \strokec4 GamesLayout
-\f2 \cf4 \strokec4 \'a0component which contains our shared navigation. Then whichever child\'a0
-\f3 \cf4 \strokec4 Route
-\f2 \cf4 \strokec4 \'a0is matched will be rendered wherever the\'a0
-\f3 \cf4 \strokec4 Outlet
-\f2 \cf4 \strokec4 \'a0component is placed inside our layout component. The\'a0
-\f3 \cf4 \strokec4 Outlet
-\f2 \cf4 \strokec4 \'a0component is essentially a placeholder component that will render whatever our current page's content is. This structure is incredibly useful and makes sharing code between routes incredibly easy.\'94
-\f1\fs30 \cf4 \strokec4 \
+\'93whenever we match a route inside the\'a0/game\'a0parent\'a0Route\'a0it will render the\'a0GamesLayout\'a0component which contains our shared navigation. Then whichever child\'a0Route\'a0is matched will be rendered wherever the\'a0Outlet\'a0component is placed inside our layout component. The\'a0Outlet\'a0component is essentially a placeholder component that will render whatever our current page's content is. This structure is incredibly useful and makes sharing code between routes incredibly easy.\'94\
 \
 \
 Outlet tag will be in GamesList under nav tag for sub-nav that navs between games\
+	<nav>\'85</nav/>\
+	<Outlet/>\
 \
-<nav></nav/>\
-<Outlet/>\
 \
-Outlet can take a context prop 
-\f2\fs28 \cf4 \strokec4 which will work just like React context.\
-
-\f1\fs30 \cf4 \cb16 \strokec4 <\cf8 \cb16 \strokec8 Outlet\cf4 \cb16 \strokec4  \cf6 \strokec6 context\cf3 \strokec3 =\{\cf4 \strokec4 \{hello\cf6 \strokec6 :\cf4 \strokec4  \cf5 \strokec5 "world"\cf4 \strokec4 \}\cf3 \strokec3 \}\cf4 \strokec4 />\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 Outlet Context\cf4 \ulnone \strokec4 \
+Outlet can take a context prop which will work just like React context.\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb16 	<\cf8 \cb16 \strokec8 Outlet\cf4 \cb16 \strokec4  \cf6 \strokec6 context\cf3 \strokec3 =\{\cf4 \strokec4 \{hello\cf6 \strokec6 :\cf4 \strokec4  \cf5 \strokec5 "world"\cf4 \strokec4 \}\cf3 \strokec3 \}\cf4 \strokec4 />\
+\cb1 \
 Context can stay same if dynamic param changes\
-Useful for login sessions, etc; can pass in context of username that is logged in\
-\cb16 <\cf8 \cb16 \strokec8 Outlet\cf4 \cb16 \strokec4  \cf6 \strokec6 context\cf3 \strokec3 =\{\cf5 \strokec5 "hello world"\cf3 \strokec3 \}\cf4 \strokec4 />\
+Useful for login sessions, etc; can pass in context of username that is logged in\cb16 \
 \cf17 \
 \pard\pardeftab720\partightenfactor0
 \cf17 \cb16 \strokec18 Outlet context allows for passing shared data to shared layouts, can pass data from App level to GamesList, then context allows you to pass down from GamesList to Game or NewGame \cf4 \cb1 \strokec4 \
 \
 \
+\
 \pard\pardeftab720\partightenfactor0
 \cf4 \ul \ulc4 \strokec4 React-Router Lab (space-mission)\cf4 \ulnone \strokec4 \
+npm i react-router-dom axios\
 \pard\pardeftab720\partightenfactor0
+\cf17 \cb2 \
+\pard\pardeftab720\partightenfactor0
+\cf17 \strokec18 Wrap component elements in the <Route> element & add them to the <Routes> elements.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf19 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Why do we need to reference data.photo.prop on the Photo component, when data.photo is being passed to Photo components already in the map? Shouldn\'92t it just be data.prop on the Photo component, where data is the photo being mapped to custom Photo instances?\cf17 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf17 \
+\
+\ul Common Conditional (Ternanry) Operator Statement Patterns\ulnone \
 
-\fs28 \cf4 \strokec4 npm i react-router-dom axios
-\fs30 \cf4 \strokec4 \
+\f2\i \cf4 \cb16 If not loading & data exists, map data to elements; else, show loading animation:
+\f1\i0 \
+<>\
+	\cf3 \strokec3 \{ !\cf6 \strokec6 loading\cf3 \strokec3  &&\cf4 \strokec4  \cf6 \strokec6 data\cf4 \strokec4  \cf3 \strokec3 ?\cf4 \strokec4  \cf6 \strokec6 data\cf3 \strokec3 .\cf4 \strokec4 photos\cf3 \strokec3 .\cf7 \strokec7 map\cf4 \strokec4 ((\cf20 \strokec20 photo\cf4 \strokec4 ) \cf3 \strokec3 =>\cf4 \strokec4  <\cf8 \cb16 \strokec8 Photo\cf4 \cb16 \strokec4  \cf6 \strokec6 key\cf3 \strokec3 =\{\cf20 \strokec20 photo\cf3 \strokec3 .\cf4 \strokec4 id\cf3 \strokec3 \}\cf4 \strokec4  \cf6 \strokec6 photo\cf3 \strokec3 =\{\cf20 \strokec20 photo\cf3 \strokec3 \}\cf4 \strokec4  />) \cf3 \strokec3 :\cf4 \strokec4  <\cf8 \cb16 \strokec8 Spinner\cf4 \cb16 \strokec4 /> \cf3 \strokec3 \}\cf4 \cb1 \strokec4 \
+\cb16 </>\cb1 \
+\cf17 \cb2 \
+\
+\
+\ul useEffect() Continued\ulnone \
+https://react.dev/reference/react/useEffect#fetching-data-with-effects\
+https://react.dev/reference/react/useEffect#specifying-reactive-dependencies\
 \pard\pardeftab720\partightenfactor0
-\cf4 \cb2 \
+\cf17 \strokec21 \'93{\field{\*\fldinst{HYPERLINK "https://react.dev/learn/lifecycle-of-reactive-effects#what-an-effect-with-empty-dependencies-means"}}{\fldrslt \cf21 \cb16 An Effect with empty dependencies}}\cf22 \cb16 \strokec22  doesn\'92t re-run when any of your component\'92s props or state change.\'94\cf17 \cb2 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 https://react.dev/learn/lifecycle-of-reactive-effects#what-an-effect-with-empty-dependencies-means\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \ul \ulc0 \outl0\strokewidth0 React Portfolio Exercise Idea\ulnone \
+Spotify visualization using Nasa videos\
+Incorporates both music players & video players\
+\pard\pardeftab720\partightenfactor0
+\cf12 \cb2 Nasa API: {\field{\*\fldinst{HYPERLINK "https://api.nasa.gov/"}}{\fldrslt \cf0 \cb1 \ul \ulc0 https://api.nasa.gov/}}\cf0 \cb1 \
+\cf12 \cb2 Nasa API Docs: \cf0 \cb1 https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf\
+Nasa image/video DB: https://images.nasa.gov/#/\cf4 \cb2 \outl0\strokewidth0 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \
+\
 \
 \pard\pardeftab720\partightenfactor0
 \cf4 \ul \ulc4 \strokec4 Other\cf4 \ulnone \strokec4 \
 \pard\pardeftab720\partightenfactor0
 \cf12 \outl0\strokewidth0 Render for hosting\
+	Need to run npm run build\
 \
-Nasa API: {\field{\*\fldinst{HYPERLINK "https://api.nasa.gov/"}}{\fldrslt 
-\f2\fs28 \cf0 \cb1 \ul \ulc0 \outl0\strokewidth0 \strokec17 https://api.nasa.gov/}}\
-\
+https://reactjsexample.com/\cf0 \cb1 \outl0\strokewidth0 \strokec17 \
+\cf12 \cb2 \outl0\strokewidth0 \
 DataIsBeautiful subreddit\
 \
 <ul><li><Link> is clunky, what are alternatives?\cf4 \outl0\strokewidth0 \strokec4 \
@@ -222,4 +251,7 @@ DataIsBeautiful subreddit\
 \cf4 \
 \pard\tx720\tx1440\pardeftab720\partightenfactor0
 \cf4 \strokec4 If a question leads to the next part of the lesson, it\'92s a good question\
-}
+\
+Emphasis on readability over small number of lines in file: I would rather scroll down than squint or spend time parsing long one-line statements\
+Hierarchical\
+However, I still like to make files have as few lines of code as possible outside of spacing by leveraging componentization, file structure, & file imports}

@@ -5,7 +5,7 @@ function Navbar() {
         <nav className="col-md-6">
             <Link to="/mission">Mission</Link>
             <Link to="/gallery">Gallery</Link>
-            <Link to="/contact"></Link>
+            <Link to="/contact">Contact</Link>
         </nav>
      );
 }

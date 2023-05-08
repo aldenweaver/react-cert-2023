@@ -19,7 +19,7 @@ function App() {
       </div>
 
       <div className="row">
-        {/* Wrap all other elements in the <Routes> element and inside we added <Route> elements. */}
+        {/* Wrap component elements in the <Route> element & add them to the <Routes> elements. */}
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/mission" element={<Mission/>} />

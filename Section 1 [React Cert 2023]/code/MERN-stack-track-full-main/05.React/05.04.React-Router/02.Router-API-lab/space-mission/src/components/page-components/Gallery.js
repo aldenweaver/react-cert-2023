@@ -27,7 +27,7 @@ function Gallery() {
             
             {/* Here we are first checking if the photos array is empty if it is not then we are using map to iterate over each phot in the photos array and display a <Photo /> component for each. If the photos array is empty we instead display our JSX loading element instead. */}
             <div className="row">
-                { !loading && data ? data.photos.map((photo) => <Photo key={photo.id} photo={photo} />) : <Spinner/>}
+                { !loading && data ? data.photos.map((photo) => <Photo key={photo.id} photo={photo} />) : <Spinner/> }
             </div>
       </div>
      );
